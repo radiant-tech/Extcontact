@@ -127,14 +127,10 @@ class ExtcontactTableContact extends JTable
 		}
 
 		// Turn the section array into a comma separated string to store
+		// Note if SaveAjaxOrder is called, $this->section will still be a string
 		if ($this->section && is_array($this->section))
 		{
 			$this->section = (string) implode(',', $this->section);
-		}
-		else 
-		{
-			// Not good data, clear it
-			$this->section = '';
 		}
 
 		return parent::store($updateNulls);
