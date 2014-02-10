@@ -57,8 +57,8 @@ class ExtcontactViewContacts extends JViewLegacy
 	 */
 	protected function addToolbar()
 	{
-		require_once JPATH_COMPONENT . '/helpers/extcontact.php';
-		$canDo	= JHelperContent::getActions($this->state->get('filter.category_id'), 0, 'com_extcontact');
+		// Changed as of 3.2.2
+		$canDo = JHelperContent::getActions('com_extcontact', 'category', $this->state->get('filter.category_id'));
 		$user	= JFactory::getUser();
 
 		// Get the toolbar object instance

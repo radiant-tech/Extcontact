@@ -52,7 +52,7 @@ class ExtcontactViewSection extends JViewLegacy
 		$checkedOut	= !($this->item->checked_out == 0 || $this->item->checked_out == $userId);
 
 		// Only concerned with component level permissions
-		$canDo		= JHelperContent::getActions(0, 0, 'com_extcontact');
+		$canDo		= JHelperContent::getActions('com_extcontact', '', (int) $this->item->id);
 
 		JToolbarHelper::title(JText::_('COM_EXTCONTACT_MANAGER_SECTION'), 'contact');
 
