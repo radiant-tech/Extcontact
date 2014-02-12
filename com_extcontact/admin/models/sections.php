@@ -104,7 +104,8 @@ class ExtcontactModelSections extends JModelList
 		$query->select(
 				$this->getState(
 						'list.select',
-						'a.id, a.name, a.checked_out, a.checked_out_time' .
+						'a.id, a.name, a.link, a.related' .
+						', a.checked_out, a.checked_out_time' .
 						', a.published, a.created, a.created_by'
 				)
 		);

@@ -69,6 +69,12 @@ $sortFields = $this->getSortFields();
 					<th>
 						<?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.name', $listDirn, $listOrder); ?>
 					</th>
+					<th>
+						<?php echo JText::_('COM_EXTCONTACT_HEADING_MENUITEM_PATH')?>
+					</th>
+					<th>
+						<?php echo JText::_('COM_EXTCONTACT_HEADING_RELATED'); ?>
+					</th>
 					<th width="1%" class="nowrap center hidden-phone">
 						<?php echo JHtml::_('grid.sort', 'JGRID_HEADING_ID', 'a.id', $listDirn, $listOrder); ?>
 					</th>
@@ -110,7 +116,17 @@ $sortFields = $this->getSortFields();
 							<a href="<?php echo JRoute::_('index.php?option=com_extcontact&task=section.edit&id='.(int) $item->id); ?>"><?php echo $this->escape($item->name); ?></a>
 						</div>
 					</td>
-					<td align="center hidden-phone">
+					<td class="has-context">
+						<div class="pull-left">
+							<?php echo $item->path; ?>
+						</div>
+					</td>
+					<td class="has-context">
+						<div class="pull-left">
+							<?php echo $item->related; ?>
+						</div>
+					</td>
+					<td class="center hidden-phone">
 						<?php echo $item->id; ?>
 					</td>
 				</tr>
@@ -118,7 +134,7 @@ $sortFields = $this->getSortFields();
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="4">
+					<td colspan="6">
 						<?php echo $this->pagination->getListFooter(); ?>
 					</td>
 				</tr>

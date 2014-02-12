@@ -50,8 +50,9 @@ class ExtcontactHelper extends JHelperContent
 	{
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-			->select('id, name, link')
+			->select('id, name, link, published')
 			->from('#__extcontact_sections')
+			->order('name ASC')
 		;
 
 		if (!empty($section))
@@ -64,6 +65,7 @@ class ExtcontactHelper extends JHelperContent
 			$query->where('published = 1');
 		}
 		$db->setQuery($query);
+		$names = array();
 		$names = $db->loadObjectList();
 		
 		return $names;	

@@ -23,7 +23,11 @@ class ExtcontactViewSections extends JViewLegacy
 	 */
 	public function display($tpl = null)
 	{
-		$this->items = $this->get('Items');
+		$app = JFactory::getApplication();
+		$menu = $app->getMenu('site');
+		
+		$items = array();
+		$items = $this->get('Items');
 		$this->pagination = $this->get('Pagination');
 		$this->state = $this->get('State');
 		
@@ -36,6 +40,29 @@ class ExtcontactViewSections extends JViewLegacy
 			return false;
 		}
 		
+		foreach ($items as $item)
+		{
+			// Handle the Menuitem data
+			if (is_numeric($item->link)) 
+			{
+				$menuItem = $menu->getItem($item->link);
+				$item->path = $menuItem->route;
+			}
+			
+			// Handle the Related sections data
+			while (!empty($item->related)) 
+			{
+				$sections = ExtcontactHelper::getSections($item->related, false);
+				foreach ($sections as $section)
+				{
+					$related_list .= ($section->published == 1 ? $section->name.', ' : '<span style="color:red;">'.$section->name.'</span>, ');
+				}
+				$item->related = rtrim($related_list, ', ');
+				break;
+			}
+		}
+		$this->items = &$items;
+				
 		// @todo: Ordering can be added later
 		
 		$this->addToolbar();
