@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="package" version="3.2">
+	<name>ExtContact Package</name>
+	<author>Denise McLaurin</author>
+	<creationDate>February 2014</creationDate>
+	<packagename>extcontact</packagename>
+	<license>GNU GPL v2</license>
+	<version>1.0.0</version>
+	<url>www.radiantconsultinginc.com</url>
+	<packager>Denise McLaurin</packager>
+	<packagerurl>www.radiantconsultinginc.com</packagerurl>
+	<description>Single Install Package combining ExtContact component with Contacts and Related Sections modules</description>
+	<files folder="packages">
+		<file type="component" id="extcontact">com_extcontact_v1.0.0.zip</file>
+		<file type="module" id="extcontact">mod_extcontact_v1.0.0.zip</file>
+	</files>
+</extension>
