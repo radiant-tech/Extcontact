@@ -22,7 +22,9 @@
 		 	label="COM_EXTCONTACT_FIELD_SECTIONLINK_LABEL"
 		 	description="COM_EXTCONTACT_FIELD_SECTIONLINK_DESC"
 		 	published="1"
-		 />
+		 >
+		 	<option value="">COM_EXTCONTACT_OPTION_NOMENUITEM</option>
+		 </field>
 		 
 		 <field name="related" type="related"
 		 	label="COM_EXTCONTACT_FIELD_RELATED_LABEL"
