@@ -54,42 +54,11 @@ function ExtcontactBuildRoute(&$query)
 		return $segments;
 	}
 
-	if (isset($view) and ($view == 'category' or $view == 'contact'))
+	if (isset($view) and ($view == 'contact'))
 	{
 		if ($mId != (int) $query['id'] || $mView != $view)
 		{
-			if ($view == 'contact' && isset($query['catid']))
-			{
-				$catid = $query['catid'];
-			}
-			elseif (isset($query['id']))
-			{
-				$catid = $query['id'];
-			}
-			$menuCatid = $mId;
-			$categories = JCategories::getInstance('Extcontact');
-			$category = $categories->get($catid);
-			if ($category)
-			{
-				//TODO Throw error that the category either not exists or is unpublished
-				$path = array_reverse($category->getPath());
-
-				$array = array();
-				foreach ($path as $id)
-				{
-					if ((int) $id == (int) $menuCatid)
-					{
-						break;
-					}
-					if ($advanced)
-					{
-						list($tmp, $id) = explode(':', $id, 2);
-					}
-					$array[] = $id;
-				}
-				$segments = array_merge($segments, array_reverse($array));
-			}
-			if ($view == 'contact')
+			if ($view == 'contact' && isset($query['id']))
 			{
 				if ($advanced)
 				{
@@ -101,6 +70,7 @@ function ExtcontactBuildRoute(&$query)
 				}
 				$segments[] = $id;
 			}
+				
 		}
 		unset($query['id']);
 		unset($query['catid']);
