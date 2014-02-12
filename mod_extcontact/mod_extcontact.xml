@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+	<name>MOD_EXTCONTACT</name>
+	<creationDate>February 2014</creationDate>
+	<author>Denise McLaurin</author>
+	<authorEmail>denise@radiantconsultinginc.com</authorEmail>
+	<copyright>Copyright (C) 2014 Denise McLaurin. All rights reserved.</copyright>
+	<license>GNU GPL v2</license>
+	<version>0.0.8</version>
+	<description>MOD_EXTCONTACT_XML_DESC</description>
+	<files>
+		<filename module="mod_extcontact">mod_extcontact.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="count" type="text"
+					label="MOD_EXTCONTACT_FIELD_COUNT_LABEL"
+					description="MOD_EXTCONTACT_FIELD_COUNT_DESC"
+					default="3"
+				/>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
