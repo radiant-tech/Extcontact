@@ -92,5 +92,23 @@ class ExtcontactModelSection extends JModelAdmin
 	
 		return $data;
 	}
+
+	/**
+	 * Method to get a single record.
+	 *
+	 * @param   integer    $pk    The id of the primary key.
+	 * @return  mixed  Object on success, false on failure.
+	 */
+	public function getItem($pk = null)
+	{
+		$item = parent::getItem($pk);
+	
+		// Convert related string to array
+		if (!empty($item->related)) {
+			$item->related = explode(',', $item->related);
+		}
+	
+		return $item;
+	}
 	
 }

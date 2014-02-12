@@ -23,6 +23,15 @@
 		 	description="COM_EXTCONTACT_FIELD_SECTIONLINK_DESC"
 		 	published="1"
 		 />
+		 
+		 <field name="related" type="related"
+		 	label="COM_EXTCONTACT_FIELD_RELATED_LABEL"
+		 	description="COM_EXTCONTACT_FIELD_RELATED_DESC"
+		 	class="inputbox"
+		 	multiple="true"
+		 >
+		 	<option value="0">COM_EXTCONTACT_FIELD_VALUE_NONE</option>
+		 </field>
 
 		<field name="published" type="list"
 			id="published"

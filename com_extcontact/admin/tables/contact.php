@@ -48,8 +48,6 @@ class ExtcontactTableContact extends JTable
 			$array['metadata'] = (string) $registry;
 		}
 		
-		
-
 		return parent::bind($array, $ignore);
 	}
 

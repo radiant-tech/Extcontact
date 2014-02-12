@@ -40,6 +40,13 @@ class ExtcontactTableSection extends JTable
 			$this->created_by 	= $user->get('id');
 		}
 
+		// Turn the related array into a comma separated string to store
+		// Note if SaveAjaxOrder is called, $this->related will still be a string
+		if ($this->related && is_array($this->related))
+		{
+			$this->related = (string) implode(',', $this->related);
+		}
+		
 		return parent::store($updateNulls);
 	}
 

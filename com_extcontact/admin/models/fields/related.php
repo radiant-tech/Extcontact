@@ -7,40 +7,45 @@
 
 JFormHelper::loadFieldClass('list');
 
-class JFormFieldSection extends JFormFieldList
+class JFormFieldRelated extends JFormFieldList
 {
-	protected $type = 'Section';
-	
+	protected $type = 'Related';
+
 	/**
 	 * Method to get the Options
 	 */
 	protected function getOptions()
 	{
+		// Get the current section id
+		$input = JFactory::getApplication()->input;
+		$id = $input->get('id', 0, 'INT');
+		
 		// Return all sections, including unpublished, but not trashed
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-			->select('id, name')
-			->from('#__extcontact_sections')
-			->where('published!=-2')
+		->select('id, name')
+		->from('#__extcontact_sections')
+		->where('published!=-2')
+		->where('id!='.$id)
 		;
 		$db->setQuery($query);
-		
-		try 
+
+		try
 		{
 			$items = $db->loadObjectList();
-		} 
-		catch (Exception $e) 
+		}
+		catch (Exception $e)
 		{
 			JError::raiseWarning(500, $e->getMessage);
 		}
-		
+
 		$options = array();
 		foreach ($items as $item)
 		{
 			$options[] = JHtml::_('select.option', $item->id, $item->name);
 		}
 		$options = array_merge(parent::getOptions(), $options);
-		
+
 		return $options;
 	}
 }

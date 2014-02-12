@@ -27,8 +27,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   array  $contexts  An array of item contexts.
 	 *
 	 * @return  boolean  Returns true on success, false on failure.
-	 *
-	 * @since   2.5
 	 */
 	public function batch($commands, $pks, $contexts)
 	{
@@ -157,8 +155,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   array    $contexts  An array of item contexts.
 	 *
 	 * @return  mixed  An array of new IDs on success, boolean false on failure.
-	 *
-	 * @since   11.1
 	 */
 	protected function batchCopy($value, $pks, $contexts)
 	{
@@ -249,8 +245,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   array    $contexts  An array of item contexts.
 	 *
 	 * @return  boolean  True if successful, false otherwise and internal error is set.
-	 *
-	 * @since   2.5
 	 */
 	protected function batchUser($value, $pks, $contexts)
 	{
@@ -291,7 +285,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   object  $record  A record object.
 	 *
 	 * @return  boolean  True if allowed to delete the record. Defaults to the permission set in the component.
-	 * @since   1.6
 	 */
 	protected function canDelete($record)
 	{
@@ -312,7 +305,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   object    $record    A record object.
 	 *
 	 * @return  boolean  True if allowed to change the state of the record. Defaults to the permission set in the component.
-	 * @since   1.6
 	 */
 	protected function canEditState($record)
 	{
@@ -338,7 +330,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   array     $config    Configuration array for model. Optional.
 	 *
 	 * @return  JTable    A database object
-	 * @since   1.6
 	 */
 	public function getTable($type = 'Contact', $prefix = 'ExtcontactTable', $config = array())
 	{
@@ -352,7 +343,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   boolean    $loadData    True if the form is to load its own data (default case), false if not.
 	 *
 	 * @return  mixed  A JForm object on success, false on failure
-	 * @since   1.6
 	 */
 	public function getForm($data = array(), $loadData = true)
 	{
@@ -387,9 +377,7 @@ class ExtcontactModelContact extends JModelAdmin
 	 * Method to get a single record.
 	 *
 	 * @param   integer    $pk    The id of the primary key.
-	 *
 	 * @return  mixed  Object on success, false on failure.
-	 * @since   1.6
 	 */
 	public function getItem($pk = null)
 	{
@@ -439,7 +427,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * Method to get the data that should be injected in the form.
 	 *
 	 * @return  mixed  The data for the form.
-	 * @since   1.6
 	 */
 	protected function loadFormData()
 	{
@@ -469,7 +456,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   array  The form data.
 	 *
 	 * @return  boolean  True on success.
-	 * @since    3.0
 	 */
 	public function save($data)
 	{
@@ -622,7 +608,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   JTable    $table    A record object.
 	 *
 	 * @return  array  An array of conditions to add to add to ordering queries.
-	 * @since   1.6
 	 */
 	protected function getReorderConditions($table)
 	{
@@ -682,7 +667,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   integer  $value    The value to toggle to.
 	 *
 	 * @return  boolean  True on success.
-	 * @since   1.6
 	 */
 	public function featured($pks, $value = 0)
 	{
@@ -732,8 +716,6 @@ class ExtcontactModelContact extends JModelAdmin
 	 * @param   string   $title      The title.
 	 *
 	 * @return  array  Contains the modified title and alias.
-	 *
-	 * @since   3.1
 	 */
 	protected function generateNewTitle($category_id, $alias, $name)
 	{

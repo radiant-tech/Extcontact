@@ -41,7 +41,11 @@ $app = JFactory::getApplication();
 				<div class="control-label"><?php echo $this->form->getLabel('link'); ?></div>
 				<div class="controls"><?php echo $this->form->getInput('link'); ?></div>
 			</div>
-		</div>		
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('related'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('related'); ?></div>
+			</div>
+		</div>
 	</div>
 	<input type="hidden" name="task" value="" />
 	<?php echo JHtml::_('form.token'); ?>
