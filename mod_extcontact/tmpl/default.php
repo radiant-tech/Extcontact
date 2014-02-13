@@ -7,7 +7,7 @@ defined('_JEXEC') or die;
 	<ul>
 	<?php foreach ($list as $contact) : ?>
 		<li>
-		<?php if ($contact->link) : ?>
+		<?php if (isset($contact->link)) : ?>
 			<a href="<?php echo $contact->link; ?>"><?php echo $contact->name; ?></a>
 		<?php else : ?>
 			<?php echo $contact->name; ?>

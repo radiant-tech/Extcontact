@@ -33,6 +33,7 @@ abstract class modExtcontactContactsHelper
 			->from('#__extcontact_details AS a')
 			->join('LEFT', '#__categories AS c ON c.id=a.catid')
 			->where('LOCATE('.$section_id.', section)')
+			->where('a.published=1')
 			->order('c.lft ASC, a.ordering ASC')
 			;
 			$db->setQuery($query);
@@ -62,7 +63,11 @@ abstract class modExtcontactContactsHelper
 			$link = 'index.php?option=com_extcontact&view=contact&id=';
 			foreach ($contacts as $contact)
 			{
-				$menuItem = $menu->getItems(array('link'), array($link.$contact->id), true);
+				if (isset($contact->link))
+				{
+					$menuItem = $menu->getItems(array('link'), array($link.$contact->id), true);
+				}
+				
 				if (!empty($menuItem))
 				{
 					$contact->link = $link . $contact->id . '&Itemid='.$menuItem->id;
