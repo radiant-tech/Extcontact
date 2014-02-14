@@ -63,10 +63,7 @@ abstract class modExtcontactContactsHelper
 			$link = 'index.php?option=com_extcontact&view=contact&id=';
 			foreach ($contacts as $contact)
 			{
-				if (isset($contact->link))
-				{
-					$menuItem = $menu->getItems(array('link'), array($link.$contact->id), true);
-				}
+				$menuItem = $menu->getItems(array('link'), array($link.$contact->id), true);
 				
 				if (!empty($menuItem))
 				{

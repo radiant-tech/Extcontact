@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension type="module" version="3.2" client="site" method="upgrade">
-	<name>MOD_EXTCONTACT</name>
+	<name>Staff Manager - Contacts</name>
 	<creationDate>February 2014</creationDate>
 	<author>Denise McLaurin</author>
 	<authorEmail>denise@radiantconsultinginc.com</authorEmail>
 	<copyright>Copyright (C) 2014 Denise McLaurin. All rights reserved.</copyright>
 	<license>GNU GPL v2</license>
-	<version>1.0.0</version>
-	<description>MOD_EXTCONTACT_XML_DESC</description>
+	<version>1.0.2</version>
+	<description>This module displays Contacts related to a Practice Area</description>
 	<files>
 		<filename module="mod_extcontact">mod_extcontact.php</filename>
 		<filename>index.html</filename>
