@@ -84,11 +84,11 @@ $sortFields = $this->getSortFields();
 			<?php
 			$n = count($this->items);
 			foreach ($this->items as $i => $item) :
-				$canCreate	= $user->authorise('core.create',     'com_extcontact.category.'.$item->catid);
-				$canEdit	= $user->authorise('core.edit',       'com_extcontact.category.'.$item->catid);
+				$canCreate	= $user->authorise('core.create',     'com_extcontact.'.$item->id);
+				$canEdit	= $user->authorise('core.edit',       'com_extcontact.'.$item->id);
 				$canCheckin	= $user->authorise('core.manage',     'com_checkin') || $item->checked_out == $userId || $item->checked_out == 0;
-				$canEditOwn	= $user->authorise('core.edit.own',   'com_extcontact.category.'.$item->catid) && $item->created_by == $userId;
-				$canChange	= $user->authorise('core.edit.state', 'com_extcontact.category.'.$item->catid) && $canCheckin;
+				$canEditOwn	= $user->authorise('core.edit.own',   'com_extcontact.'.$item->id) && $item->created_by == $userId;
+				$canChange	= $user->authorise('core.edit.state', 'com_extcontact.'.$item->id) && $canCheckin;
 
 				?>
 				<tr class="row<?php echo $i % 2; ?>">
@@ -118,7 +118,7 @@ $sortFields = $this->getSortFields();
 					</td>
 					<td class="has-context">
 						<div class="pull-left">
-							<?php echo $item->path; ?>
+							<?php echo (isset($item->path) ? $item->path : ''); ?>
 						</div>
 					</td>
 					<td class="has-context">

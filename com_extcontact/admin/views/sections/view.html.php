@@ -53,6 +53,7 @@ class ExtcontactViewSections extends JViewLegacy
 			while (!empty($item->related)) 
 			{
 				$sections = ExtcontactHelper::getSections($item->related, false);
+				$related_list = '';
 				foreach ($sections as $section)
 				{
 					$related_list .= ($section->published == 1 ? $section->name.', ' : '<span style="color:red;">'.$section->name.'</span>, ');
@@ -79,7 +80,7 @@ class ExtcontactViewSections extends JViewLegacy
 		require_once JPATH_COMPONENT . '/helpers/extcontact.php';
 		
 		// We only need component level actions
-		$canDo = JHelperContent::getActions('com_extcontact', '', (int) $this->item->id);
+		$canDo = JHelperContent::getActions('com_extcontact');
 		$user = JFactory::getUser();
 
 		// Get the toolbar object instance
