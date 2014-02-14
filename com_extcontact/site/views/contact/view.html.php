@@ -209,6 +209,10 @@ class ExtcontactViewContact extends JViewLegacy
 					$menuitem = $menu->getItem($section->link);
 					$section->url = $menuitem->link; 
 				}
+				else 
+				{
+					$section->url = '';
+				}
 			}
 		}
 

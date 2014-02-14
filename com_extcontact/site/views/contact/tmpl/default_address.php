@@ -29,7 +29,7 @@ defined('_JEXEC') or die;
 	<?php if ($this->params->get('show_telephone') > 0 && $this->contact->telephone != '') : ?>
 		<?php echo 'Tel: '.$this->contact->telephone .'<br />'; ?>
 	<?php endif; ?>
-	<?php if ($this->params->get('show_email') > 0 && $this->contact->email != '') : ?>
-		<?php echo '<a href="mailto:'.$this->contact->email.'">'.$this->contact->email.'</a>'; ?>
+	<?php if ($this->params->get('show_email') > 0 && $this->contact->email_to != '') : ?>
+		<?php echo $this->contact->email_to; ?>
 	<?php endif; ?>
 </div>
