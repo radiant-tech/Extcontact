@@ -22,6 +22,7 @@ class JFormFieldSection extends JFormFieldList
 			->select('id, name')
 			->from('#__extcontact_sections')
 			->where('published!=-2')
+			->order('name ASC')
 		;
 		$db->setQuery($query);
 		

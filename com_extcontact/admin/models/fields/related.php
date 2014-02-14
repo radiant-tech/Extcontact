@@ -23,10 +23,11 @@ class JFormFieldRelated extends JFormFieldList
 		// Return all sections, including unpublished, but not trashed
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true)
-		->select('id, name')
-		->from('#__extcontact_sections')
-		->where('published!=-2')
-		->where('id!='.$id)
+			->select('id, name')
+			->from('#__extcontact_sections')
+			->where('published!=-2')
+			->where('id!='.$id)
+			->order('name ASC')
 		;
 		$db->setQuery($query);
 
